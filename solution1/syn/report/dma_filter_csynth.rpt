@@ -1,0 +1,169 @@
+
+
+================================================================
+== Vivado HLS Report for 'dma_filter'
+================================================================
+* Date:           Tue May 12 06:14:33 2015
+
+* Version:        2014.1 (build date: Fri Apr 04 13:20:25 PM 2014)
+* Project:        DMA_Filter
+* Solution:       solution1
+* Product family: zynq zynq_fpv6 
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |  10.00|      0.00|        1.25|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    0|    0|    1|    1|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       1|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|       1|      0|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |      0|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    +-----------+---+----+-----+-----------+
+    |    Name   | FF| LUT| Bits| Const Bits|
+    +-----------+---+----+-----+-----------+
+    |ap_CS_fsm  |  1|   0|    1|          0|
+    +-----------+---+----+-----+-----------+
+    |Total      |  1|   0|    1|          0|
+    +-----------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------------+-----+-----+------------+---------------+--------------+
+|           RTL Ports          | Dir | Bits|  Protocol  | Source Object |    C Type    |
++------------------------------+-----+-----+------------+---------------+--------------+
+|s_axi_AXILiteS_AWVALID        |  in |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_AWREADY        | out |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_AWADDR         |  in |    5|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_WVALID         |  in |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_WREADY         | out |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_WDATA          |  in |   32|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_WSTRB          |  in |    4|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_ARVALID        |  in |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_ARREADY        | out |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_ARADDR         |  in |    5|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_RVALID         | out |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_RREADY         |  in |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_RDATA          | out |   32|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_RRESP          | out |    2|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_BVALID         | out |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_BREADY         |  in |    1|    s_axi   |    AXILiteS   |    scalar    |
+|s_axi_AXILiteS_BRESP          | out |    2|    s_axi   |    AXILiteS   |    scalar    |
+|ap_clk                        |  in |    1| ap_ctrl_hs |   dma_filter  | return value |
+|ap_rst_n                      |  in |    1| ap_ctrl_hs |   dma_filter  | return value |
+|ap_start                      |  in |    1| ap_ctrl_hs |   dma_filter  | return value |
+|ap_done                       | out |    1| ap_ctrl_hs |   dma_filter  | return value |
+|ap_idle                       | out |    1| ap_ctrl_hs |   dma_filter  | return value |
+|ap_ready                      | out |    1| ap_ctrl_hs |   dma_filter  | return value |
+|m_axi_output_config_AWVALID   | out |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_AWREADY   |  in |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_AWADDR    | out |   32|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_AWID      | out |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_AWLEN     | out |    8|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_AWSIZE    | out |    3|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_AWBURST   | out |    2|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_AWLOCK    | out |    2|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_AWCACHE   | out |    4|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_AWPROT    | out |    3|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_AWQOS     | out |    4|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_AWREGION  | out |    4|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_AWUSER    | out |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_WVALID    | out |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_WREADY    |  in |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_WDATA     | out |   32|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_WSTRB     | out |    4|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_WLAST     | out |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_WID       | out |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_WUSER     | out |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_ARVALID   | out |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_ARREADY   |  in |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_ARADDR    | out |   32|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_ARID      | out |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_ARLEN     | out |    8|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_ARSIZE    | out |    3|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_ARBURST   | out |    2|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_ARLOCK    | out |    2|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_ARCACHE   | out |    4|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_ARPROT    | out |    3|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_ARQOS     | out |    4|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_ARREGION  | out |    4|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_ARUSER    | out |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_RVALID    |  in |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_RREADY    | out |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_RDATA     |  in |   32|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_RLAST     |  in |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_RID       |  in |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_RUSER     |  in |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_RRESP     |  in |    2|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_BVALID    |  in |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_BREADY    | out |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_BRESP     |  in |    2|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_BID       |  in |    1|    m_axi   | output_config |    pointer   |
+|m_axi_output_config_BUSER     |  in |    1|    m_axi   | output_config |    pointer   |
+|reset                         |  in |    1|   ap_none  |     reset     |    scalar    |
++------------------------------+-----+-----+------------+---------------+--------------+
+
